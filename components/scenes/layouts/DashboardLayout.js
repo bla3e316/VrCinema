@@ -23,7 +23,9 @@ class DashnoardLayout extends React.Component {
             color1: "#5234df",
             color2: "#BDDAF1",
             text: this.props.text,
-            borderWidths: [0, 0, 0, 0, 0, 0]
+            borderWidths: [0, 0, 0, 0, 0, 0],
+            environments: ["space.jpg", "111.jpg", "222.jpg", "333.jpg", "444.jpg"],
+            stage: 1
         };
     }
 
@@ -51,7 +53,7 @@ class DashnoardLayout extends React.Component {
     }
 
     updateScene() {
-        this.setState({color1: "#BDDAF1", color2: "#5234df", text: "Watch Video"});
+        this.setState({color1: "#BDDAF1", color2: "#5234df", text: "Watch Video", state: 2});
     }
 
     // updateShowButton() {
@@ -104,6 +106,8 @@ class DashnoardLayout extends React.Component {
                 }}>
                     <MenuButtons/>
                     <TileButtons
+                        stage={this.state.stage}
+                        environments={this.state.environments}
                         previews={this.props.previews}
                         updateStage={this.updateStage.bind(this)}
                         borderWidths={this.state.borderWidths}

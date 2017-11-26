@@ -19,7 +19,9 @@ export default class VrCinema extends React.Component {
         super();
         this.state = {
             previews: "",
-            IDs: ""
+            IDs: "",
+            selectedStreamID: "",
+            selectedEnv: ""
         };
     }
 
@@ -47,6 +49,7 @@ export default class VrCinema extends React.Component {
         const IDs = response.data.featured.map(function(feat) {
             return feat.stream._id;
         });
+        this.setState({IDs: IDs});
         console.log(IDs);
     }
 
