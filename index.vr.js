@@ -40,7 +40,7 @@ export default class VrCinema extends React.Component {
             return feat.stream.preview.large;
         });
         this.setState({previews: previews});
-        //console.log(previews);
+        console.log(previews);
     }
 
     gatherStreamIDs(response) {
@@ -48,8 +48,6 @@ export default class VrCinema extends React.Component {
             return feat.stream._id;
         });
         console.log(IDs);
-
-        //this.setState({IDs: IDs});
     }
 
     render() {
@@ -59,7 +57,8 @@ export default class VrCinema extends React.Component {
                 <Dashboard
                     previews={this.state.previews}
                     showButton={false}
-                    text={"Select Environment"}/>
+                    text={"Select Environment"}
+                />
                 {/*<VideoPlayer showButton={true} text={"Back to Main"}/>*/}
             </View>
         );
