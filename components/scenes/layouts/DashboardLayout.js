@@ -17,7 +17,11 @@ class DashnoardLayout extends React.Component {
         super();
         this.state = {
             slideLeft: new Animated.Value(-1),
-            fadeIn: new Animated.Value(0)};
+            fadeIn: new Animated.Value(0),
+            showButton: false,
+            color1: "#5234df",
+            color2: "#BDDAF1"
+        };
     }
 
     componentDidMount() {
@@ -43,6 +47,14 @@ class DashnoardLayout extends React.Component {
         ]).start();
     }
 
+    updateScene() {
+        this.setState({color1: "#BDDAF1", color2: "#5234df"});
+    }
+
+    updateShowButton() {
+        this.setState({showButton: true});
+    }
+
     render() {
         return (
             <View>
@@ -61,8 +73,8 @@ class DashnoardLayout extends React.Component {
                     marginTop: -0.3
                 }}>
                     <MenuButtons/>
-                    <TileButtons/>
-                    <ProgressCircles/>
+                    <TileButtons updateShowButton={this.updateShowButton.bind(this)}/>
+                    <ProgressCircles color1={this.state.color1} color2={this.state.color2}/>
                 </Animated.View>
 
                 <View style ={{
@@ -74,7 +86,9 @@ class DashnoardLayout extends React.Component {
                     transform: [{translate: [0, 0, -3]}],
                     marginTop: -0.7
                 }}>
-                    <Button showButton={this.props.showButton} text={this.props.text}/>
+                    <Button updateScene={this.updateScene.bind(this)}
+                            showButton={this.state.showButton}
+                            text={this.props.text}/>
                 </View>
             </View>
         )

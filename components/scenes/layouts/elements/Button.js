@@ -58,7 +58,7 @@ class Button extends React.Component {
                         transform: [
                             {translateX: this.state.slideRight}]
                     }}>
-                        <VrButton>
+                        <VrButton onClick={this.props.updateScene}>
                             <Text style={{
                                 fontSize: 0.2,
                                 fontWeight: '400',

@@ -6,6 +6,7 @@ import {
 //Element
 class ProgressCircles extends React.Component {
 
+
     render() {
         return (
             <View>
@@ -24,7 +25,7 @@ class ProgressCircles extends React.Component {
                         borderRadius: 0.5,
                         height: 0.1,
                         // backgroundColor: this.props.color1,
-                        backgroundColor: "#DBDAF1"
+                        backgroundColor: this.props.color1
                     }}>
                     </View>
 
@@ -35,7 +36,7 @@ class ProgressCircles extends React.Component {
                         borderRadius: 0.5,
                         height: 0.1,
                         // backgroundColor: this.props.color2,
-                        backgroundColor: "#DBDAF1"
+                        backgroundColor: this.props.color2
                     }}>
                     </View>
 
