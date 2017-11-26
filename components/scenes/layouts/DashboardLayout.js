@@ -103,8 +103,15 @@ class DashnoardLayout extends React.Component {
                     marginTop: -0.3
                 }}>
                     <MenuButtons/>
-                    <TileButtons updateStage={this.updateStage.bind(this)} borderWidths={this.state.borderWidths}/>
-                    <ProgressCircles color1={this.state.color1} color2={this.state.color2}/>
+                    <TileButtons
+                        preview={this.props.previews}
+                        updateStage={this.updateStage.bind(this)}
+                        borderWidths={this.state.borderWidths}
+                    />
+                    <ProgressCircles
+                        color1={this.state.color1}
+                        color2={this.state.color2}
+                    />
                 </Animated.View>
 
                 <View style ={{
