@@ -5,7 +5,7 @@ import {
     VrButton
 } from 'react-vr';
 
-//Element
+
 class TileButtons extends React.Component {
 
 
@@ -17,11 +17,11 @@ class TileButtons extends React.Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            // borderWidth: this.props.borderWidths[0],
-                            // borderColor: "#A482DF",
-                            // borderStyle: "solid"
+                            borderWidth: this.props.borderWidths[0],
+                            borderColor: "#bb13f7",
+                            borderStyle: "solid"
                         }}>
-                        <VrButton onClick={this.props.updateShowButton}>
+                        <VrButton onClick={() => this.props.updateStage(1)}>
                             <Text style={{
                                     fontSize: 0.2, textAlign: 'center', color: "#FFFFFF",
                                 }}>
@@ -33,11 +33,11 @@ class TileButtons extends React.Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            // borderWidth: this.props.borderWidths[1],
-                            // borderColor: "#A482DF",
-                            // borderStyle: "solid"
+                            borderWidth: this.props.borderWidths[1],
+                            borderColor: "#bb13f7",
+                            borderStyle: "solid"
                         }}>
-                        <VrButton onClick={this.props.updateShowButton}>
+                        <VrButton onClick={() => this.props.updateStage(2)}>
                             <Text style={{fontSize: 0.2, textAlign: 'center', color: "#FFFFFF"
                                 }}>
 
@@ -51,11 +51,11 @@ class TileButtons extends React.Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            // borderWidth: this.props.borderWidths[2],
-                            // borderColor: "#A482DF",
-                            // borderStyle: "solid"
+                            borderWidth: this.props.borderWidths[2],
+                            borderColor: "#bb13f7",
+                            borderStyle: "solid"
                         }}>
-                        <VrButton onClick={this.props.updateShowButton}>
+                        <VrButton onClick={() => this.props.updateStage(3)}>
                             <Text style={{
                                     fontSize: 0.2, textAlign: 'center', color: "#FFFFFF"
                                 }}>
@@ -67,11 +67,11 @@ class TileButtons extends React.Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            // borderWidth: this.props.borderWidths[3],
-                            // borderColor: "#A482DF",
-                            // borderStyle: "solid"
+                            borderWidth: this.props.borderWidths[3],
+                            borderColor: "#bb13f7",
+                            borderStyle: "solid"
                         }}>
-                        <VrButton onClick={this.props.updateShowButton}>
+                        <VrButton onClick={() => this.props.updateStage(4)}>
                             <Text style={{
                                     fontSize: 0.2, textAlign: 'center', color: "#FFFFFF"
                                 }}>
@@ -86,11 +86,11 @@ class TileButtons extends React.Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            // borderWidth: this.props.borderWidths[4],
-                            // borderColor: "#A482DF",
-                            // borderStyle: "solid"
+                            borderWidth: this.props.borderWidths[4],
+                            borderColor: "#bb13f7",
+                            borderStyle: "solid"
                         }}>
-                        <VrButton onClick={this.props.updateShowButton}>
+                        <VrButton onClick={() => this.props.updateStage(5)}>
                             <Text style={{
                                     fontSize: 0.2, textAlign: 'center', color: "#FFFFFF"
                                 }}>
@@ -102,11 +102,11 @@ class TileButtons extends React.Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            // borderWidth: this.props.borderWidths[5],
-                            // borderColor: "#A482DF",
-                            // borderStyle: "solid"
+                            borderWidth: this.props.borderWidths[5],
+                            borderColor: "#bb13f7",
+                            borderStyle: "solid"
                         }}>
-                        <VrButton onClick={this.props.updateShowButton}>
+                        <VrButton onClick={() => this.props.updateStage(6)}>
                             <Text style={{
                                     fontSize: 0.2, textAlign: 'center', color: "#FFFFFF"
                                 }}>

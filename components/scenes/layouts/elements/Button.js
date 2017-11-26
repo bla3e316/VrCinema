@@ -9,6 +9,7 @@ import {
 import { Easing } from 'react-native';
 
 class Button extends React.Component {
+
     constructor() {
         super();
         this.state = {

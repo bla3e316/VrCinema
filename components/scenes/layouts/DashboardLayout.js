@@ -9,18 +9,21 @@ import { Easing } from 'react-native';
 import MenuButtons from './elements/MenuButtons';
 import TileButtons from './elements/TitleButtons';
 import ProgressCircles from './elements/ProgressCircles';
+
 import Button from './elements/Button';
 
 class DashnoardLayout extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             slideLeft: new Animated.Value(-1),
             fadeIn: new Animated.Value(0),
             showButton: false,
             color1: "#5234df",
-            color2: "#BDDAF1"
+            color2: "#BDDAF1",
+            text: this.props.text,
+            borderWidths: [0, 0, 0, 0, 0, 0]
         };
     }
 
@@ -48,11 +51,38 @@ class DashnoardLayout extends React.Component {
     }
 
     updateScene() {
-        this.setState({color1: "#BDDAF1", color2: "#5234df"});
+        this.setState({color1: "#BDDAF1", color2: "#5234df", text: "Watch Video"});
     }
 
-    updateShowButton() {
-        this.setState({showButton: true});
+    // updateShowButton() {
+    //     this.setState({showButton: true});
+    // }
+    //previously updateShowButton
+    updateStage(input) {
+        if(this.state.showButton === false) {
+            this.setState({showButton: true});
+        }
+
+        switch (input) {
+            case 1:
+                this.setState({borderWidths: [0.05, 0, 0, 0, 0, 0]});
+                break;
+            case 2:
+                this.setState({borderWidths: [0, 0.05, 0, 0, 0, 0]});
+                break;
+            case 3:
+                this.setState({borderWidths: [0, 0, 0.05, 0, 0, 0]});
+                break;
+            case 4:
+                this.setState({borderWidths: [0, 0, 0, 0.05, 0, 0]});
+                break;
+            case 5:
+                this.setState({borderWidths: [0, 0, 0, 0, 0.05, 0]});
+                break;
+            case 6:
+                this.setState({borderWidths: [0, 0, 0, 0, 0, 0.05]});
+                break;
+        }
     }
 
     render() {
@@ -66,14 +96,14 @@ class DashnoardLayout extends React.Component {
                     layoutOrigin: [0.5, 0.5],
                     opacity: this.state.fadeIn,
                     transform: [
-                        {translate: [0, 0, -3]},
+                        //{translate: [0, 0, -3]},
                         {translateX: this.state.slideLeft},
-                        {translateZ: -0.3}
+                        {translateZ: -3}
                         ],
                     marginTop: -0.3
                 }}>
                     <MenuButtons/>
-                    <TileButtons updateShowButton={this.updateShowButton.bind(this)}/>
+                    <TileButtons updateStage={this.updateStage.bind(this)} borderWidths={this.state.borderWidths}/>
                     <ProgressCircles color1={this.state.color1} color2={this.state.color2}/>
                 </Animated.View>
 
@@ -88,7 +118,7 @@ class DashnoardLayout extends React.Component {
                 }}>
                     <Button updateScene={this.updateScene.bind(this)}
                             showButton={this.state.showButton}
-                            text={this.props.text}/>
+                            text={this.state.text}/>
                 </View>
             </View>
         )

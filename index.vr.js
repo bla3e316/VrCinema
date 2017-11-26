@@ -13,7 +13,7 @@ import Dashboard from './components/scenes/Dashboard';
 
 export default class VrCinema extends React.Component {
     render() {
-        {/*<TitleScene showButton={true} text={"Watch a Video"}/>*/}
+        // <TitleScene showButton={true} text={"Watch a Video"}/>
         return (
             <View>
                 <Dashboard showButton={false} text={"Select Environment"}/>
