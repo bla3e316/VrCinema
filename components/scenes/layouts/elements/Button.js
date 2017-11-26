@@ -46,6 +46,8 @@ class Button extends React.Component {
         return (
             <Animated.View style={{
                 margin: 0.1,
+                paddingLeft: 0.2,
+                paddingRight: 0.2,
                 height: 0.3,
                 backgroundColor: '#bb13f7',
                 borderRadius: 0.1,
