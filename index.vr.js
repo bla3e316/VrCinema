@@ -25,6 +25,17 @@ export default class VrCinema extends React.Component {
         };
     }
 
+    captureSelection(stage, value) {
+        switch (stage) {
+            case 1:
+                this.setState({selectedStreamID: value});
+                break;
+            case 2:
+                this.setState({selectedEnv: value});
+                break;
+        }
+    }
+
     componentWillMount() {
         axios.get('https://api.twitch.tv/kraken/streams/featured?limit=6&client_id=1c2wk8qc6d0h2s6cpz09fwstxko5o2')
             .then(response => {
@@ -58,11 +69,17 @@ export default class VrCinema extends React.Component {
             <View>
                 {/*<TitleScene showButton={true} text={"Watch a Video"}/>*/}
                 <Dashboard
+                    captureSelection={this.captureSelection.bind(this)}
                     previews={this.state.previews}
                     showButton={false}
                     text={"Select Environment"}
                 />
-                {/*<VideoPlayer showButton={true} text={"Back to Main"}/>*/}
+                {/*<VideoPlayer*/}
+                    {/*streamID={this.state.selectedStreamID}*/}
+                    {/*env={this.state.selectedEnv}*/}
+                    {/*showButton={true}*/}
+                    {/*text={"Back to Main"}*/}
+                {/*/>*/}
             </View>
         );
     }
